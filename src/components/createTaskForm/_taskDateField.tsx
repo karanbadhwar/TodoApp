@@ -4,7 +4,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { TextField } from '@mui/material';
 import { IDateField } from './interfaces/IDateField';
-
+import PropTypes from 'prop-types';
 
 export const TaskDateField: FC<IDateField> = (props): ReactElement => {
   const {
@@ -26,4 +26,10 @@ export const TaskDateField: FC<IDateField> = (props): ReactElement => {
       </LocalizationProvider>
     </>
   );
+};
+
+TaskDateField.propTypes = {
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  value: PropTypes.instanceOf(Date),
 };
