@@ -3,7 +3,7 @@ import { Box, Typography, Stack } from '@mui/material';
 
 import { TaskTitleField } from './_taskTitleField';
 import { TaskDescription } from './_taskDescription';
-import { TaskDateField } from './interfaces/_taskDateField';
+import { TaskDateField } from './_taskDateField';
 
 export const CreateTaskForm: FC = (): ReactElement => {
   return (
