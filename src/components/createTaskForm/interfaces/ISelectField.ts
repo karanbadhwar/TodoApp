@@ -2,11 +2,11 @@ import { SelectChangeEvent } from '@mui/material';
 import { IDIsabled } from './IDisabled';
 
 export interface ISelectField extends IDIsabled {
-  onChnage?: (e: SelectChangeEvent) => void;
+  onChange?: (e: SelectChangeEvent) => void;
   name?: string;
   value?: string;
   label?: string;
-  items: ISelectItems[];
+  items?: ISelectItems[];
 }
 
 export interface ISelectItems {
