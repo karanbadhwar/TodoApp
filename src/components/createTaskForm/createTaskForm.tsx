@@ -6,6 +6,9 @@ import { TaskDescription } from './_taskDescription';
 import { TaskDateField } from './_taskDateField';
 import { TaskSelectorField } from './_taskSelectorField';
 
+import { Status } from './enums/Status';
+import { Priority } from './enums/Priority';
+
 export const CreateTaskForm: FC = (): ReactElement => {
   return (
     <Box
@@ -24,7 +27,38 @@ export const CreateTaskForm: FC = (): ReactElement => {
         <TaskDescription />
         <TaskDateField />
         <Stack spacing={2} sx={{ width: '100%' }} direction="row">
-          <TaskSelectorField />
+          <TaskSelectorField
+            label="Status"
+            name="status"
+            items={[
+              {
+                value: Status.todo,
+                label: Status.todo.toUpperCase(),
+              },
+              {
+                value: Status.inProgress,
+                label: Status.inProgress.toUpperCase(),
+              },
+            ]}
+          />
+          <TaskSelectorField
+            label="Priority"
+            name="priority"
+            items={[
+              {
+                value: Priority.high,
+                label: Priority.high,
+              },
+              {
+                value: Priority.normal,
+                label: Priority.normal,
+              },
+              {
+                value: Priority.low,
+                label: Priority.low,
+              },
+            ]}
+          />
         </Stack>
       </Stack>
     </Box>
