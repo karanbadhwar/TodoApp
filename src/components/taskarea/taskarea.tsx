@@ -2,6 +2,7 @@ import { Grid, Box } from '@mui/material';
 import React, { FC, ReactElement } from 'react';
 import { format } from 'date-fns';
 import { TaskCounter } from '../taskCounter/taskCounter';
+import { Task } from '../task/task';
 
 export const Taskarea: FC = (): ReactElement => {
   return (
@@ -25,8 +26,9 @@ export const Taskarea: FC = (): ReactElement => {
           <TaskCounter />
         </Grid>
         <Grid item display="flex" flexDirection="column" xs={10} md={8}>
-          <Box>Tasks will come over here</Box>
-          <Box>Tasks will come over here</Box>
+          <Task />
+          <Task />
+          <Task />
         </Grid>
       </Grid>
     </Grid>
