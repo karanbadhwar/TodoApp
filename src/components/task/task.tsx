@@ -3,8 +3,20 @@ import { Box } from '@mui/material';
 import { TaskHeader } from './_taskHeader';
 import { TaskDescription } from './_taskDescription';
 import { TaskFooter } from './_taskFooter';
+import { ITask } from './interfaces/ITask';
+import { Status } from '../createTaskForm/enums/Status';
+import { Priority } from '../createTaskForm/enums/Priority';
 
-export const Task: FC = (): ReactElement => {
+export const Task: FC<ITask> = (props): ReactElement => {
+  const {
+    title = 'Test Title',
+    date = new Date(),
+    description = 'Lorem Ipsum',
+    priority = Priority.normal,
+    status = Status.completed,
+    onStatusChange = (e) => console.log(e),
+    onClick = (e) => console.log(e),
+  } = props;
   return (
     <Box
       display="flex"
@@ -22,11 +34,11 @@ export const Task: FC = (): ReactElement => {
       }}
     >
       {/* Task Header */}
-      <TaskHeader />
+      <TaskHeader title={title} date={date} />
       {/* Task Description */}
-      <TaskDescription />
+      <TaskDescription description={description} />
       {/* Task Footer */}
-      <TaskFooter />
+      <TaskFooter onClick={onClick} onStatusChange={onStatusChange} />
     </Box>
   );
 };
