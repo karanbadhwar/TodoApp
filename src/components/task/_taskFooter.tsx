@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { Box, Button, Switch, FormControlLabel } from '@mui/material';
 import { ITaskFooter } from './interfaces/ITaskFooter';
+import PropTypes from 'prop-types';
 
 export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
   const {
@@ -31,4 +32,8 @@ export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
       </Button>
     </Box>
   );
+};
+TaskFooter.propTypes = {
+  onClick: PropTypes.func,
+  onStatusChange: PropTypes.func,
 };
